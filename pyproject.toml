@@ -18,6 +18,12 @@ tqdm = "^4.66.1"
 pre-commit = "^3.5.0"
 yapf = "^0.40.2"
 
+
+[tool.poetry.group.deploy.dependencies]
+jupyterlite-core = "^0.2.0"
+jupyterlite-pyodide-kernel = "^0.2.0"
+ipympl = ">=0.8.2"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
