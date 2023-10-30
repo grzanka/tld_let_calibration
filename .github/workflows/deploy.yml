@@ -32,7 +32,7 @@ jobs:
         run: |
           mkdir content
           cp -r data content
-          cp -r notebooks content
+          cp -r notebook content
           poetry run jupyter lite build --contents content --output-dir dist
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
@@ -41,6 +41,7 @@ jobs:
 
   deploy:
     needs: build
+    if: github.ref == 'refs/heads/main'
     permissions:
       pages: write
       id-token: write
