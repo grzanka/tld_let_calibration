@@ -30,8 +30,10 @@ jobs:
 
       - name: Build the JupyterLite site
         run: |
-          cp README.md content
-          poetry run jupyter lite build --contents data --output-dir dist
+          mkdir content
+          cp -r data content
+          cp -r notebooks content
+          poetry run jupyter lite build --contents content --output-dir dist
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
